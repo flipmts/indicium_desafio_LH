@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Current customer information."
+    columns:
+      - name: sk_customer
+        description: "key SK generated for the table's unique identifier, generated from the customerid, personid and full_name columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: customerid
+        description: "Primary key for customer records."
+        tests:
+          - unique
+          - not_null
+
+      - name: personid
+        description: "Primary key for Person records."
+
+      - name: person_type
+        description: "Primary type of person."
+
+      - name: person_type_description
+        description: "Description from primary type of person."
+      - name: first_name
+        description: "	First name of the person."
+
+      - name: middle_name
+        description: "	Middle name or middle initial of the person."
+
+      - name: last_name
+        description: "Last name of the person."
+
+      - name: suffix
+        description: "	Surname suffix. For example, Sr. or Jr."
+
+      - name: full_name
+        description: "Full name of the person."
+
+      - name: email_address
+        description: "E-mail address for the person."

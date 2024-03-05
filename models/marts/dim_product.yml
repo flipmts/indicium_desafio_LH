@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Products sold or used in the manfacturing of sold products."
+    columns:
+      - name: sk_product
+        description: "key SK generated for the table's unique identifier, generated from the productid and product_number columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: productid
+        description: "Primary key for Product records."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Name of the product."
+        tests:
+          - not_null
+
+      - name: product_number
+        description: "Unique product identification number."
+        tests:
+          - unique
+          - not_null
+
+      - name: standard_cost
+        description: "Standard cost of the product."
+        tests:
+          - not_null
+
+      - name: list_price
+        description: "Selling price."
+        tests:
+          - not_null
+
+      - name: sell_start_date
+        description: "Date the product was available for sale."
+        tests:
+          - not_null
+
+      - name: sell_end_date
+        description: "Date the product was no longer available for sale."
+      
+      - name: discontinued_date
+        description: "Date the product was discontinued."
+
+      - name: productsubcategoryid
+        description: "Foreign key to ProductSubCategory.ProductSubCategoryID."
+
+      - name: product_subcategory
+        description: "Subcategory description"
+
+      - name: productcategoryid
+        description: "Foreign key to ProductCategory.ProductCategoryID."
+
+      - name: product_category
+        description: "Category description"

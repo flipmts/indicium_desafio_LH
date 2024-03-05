@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: fct_sales_order
+    columns:
+      - name: sk_sales_order_product
+        description: "key SK generated for the table's unique identifier, generated from the salesorderid and fk_product columns."
+        tests:
+          - unique
+          - not_null
+
+      - name: sk_sales_order
+        description: "key SK generated for the table's unique identifier, generated from the salesorderid column."
+        tests:
+          - not_null
+
+      - name: fk_product
+        description: Foreign key to dim_product.
+        tests:
+          - not_null
+
+      - name: fk_customer
+        description: Foreign key to dim_customer.
+        tests:
+          - not_null
+
+      - name: fk_salesperson
+        description: Foreign key to dim_salesperson.
+
+      - name: fk_credit_card
+        description: Foreign key to dim_credit_card.
+
+      - name: fk_territory
+        description: Foreign key to dim_territory.
+        tests:
+          - not_null
+
+      - name: salesorderid
+        description: Unique identifier of the sales order.
+        tests:
+          - not_null
+
+      - name: order_date
+        description: Date when the sales order was placed.
+        tests:
+          - not_null
+
+      - name: sales_status
+        description: Status of the sales order.
+        tests:
+          - not_null
+
+      - name: purchase_order_number
+        description: Customer purchase order number reference.
+
+      - name: subtotal
+        description: Subtotal amount of the sales order.
+        tests:
+          - not_null
+
+      - name: taxa_mt
+        description: Tax amount applied to the sales order.
+
+      - name: freight
+        description: Freight amount of the sales order.
+
+      - name: total_due
+        description: Total amount due for the sales order.
+        tests:
+          - not_null
+
+      - name: order_qty
+        description: Quantity ordered per product.
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Selling price of a single product.
+        tests:
+          - not_null
+
+      - name: unit_price_discount
+        description: Discount amount.
+        tests:
+          - not_null

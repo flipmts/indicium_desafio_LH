@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: dim_reason
+    description: "Lookup table of customer purchase reasons."
+    columns:
+      - name: sk_reason
+        description: "key SK generated for the table's unique identifier, generated from the salesreasonid and salesorderid columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: fk_order
+        description: "key FK generated for the table's unique identifier, generated from the salesorderid column."
+        tests:
+          - not_null
+      
+      - name: salesreasonid
+        description: "Primary key for SalesReason records."
+        tests:
+          - not_null
+
+      - name: sales_reason
+        description: "Sales reason description."
+        tests:
+          - not_null
+
+      - name: reason_type
+        description: "Category the sales reason belongs to."
+        tests:
+          - not_null
+
+      - name: salesorderid
+        description: "Foreign key to sales_order.salesorderid."

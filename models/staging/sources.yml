@@ -1,0 +1,25 @@
+
+version: 2
+
+sources:
+  - name: raw_data
+    schema: adventure_works
+    description: "camada staging com dados definidos conforme diagrama de modelagem para posterior transformação nas tabelas finais."
+    tables:
+      - name: salesorderheader
+      - name: salesreason
+      - name: salesorderheadersalesreason
+      - name: salesorderdetail
+      - name: salesperson
+      - name: salesterritory
+      - name: stateprovince
+      - name: address
+      - name: person
+      - name: product
+      - name: store
+      - name: customer
+      - name: productsubcategory
+      - name: productcategory
+      - name: creditcard
+      - name: emailaddress
+      - name: employee

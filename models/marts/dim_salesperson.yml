@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: "Sales representative current information."
+    columns:
+      - name: sk_salesperson
+        description: "key SK generated for the table's unique identifier, generated from the businessentityid, job_title and full_name columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: businessentityid
+        description: "Primary key for SalesPerson records."
+        tests:
+          - unique
+          - not_null
+
+      - name: sales_quota
+        description: "Projected yearly sales."
+
+      - name: bonus
+        description: "Bonus due if quota is met."
+        tests:
+          - not_null
+
+      - name: commission_pct
+        description: "Commision percent received per sale."
+        tests:
+          - not_null
+
+      - name: job_title
+        description: "Work title such as Buyer or Sales Representative."
+        tests:
+          - not_null
+
+      - name: first_name
+        description: "First name of the person.."
+        tests:
+          - not_null
+
+      - name: middle_name
+        description: "Middle name or middle initial of the person."
+
+      - name: last_name
+        description: "Last name of the person."
+        tests:
+          - not_null
+
+      - name: suffix
+        description: "Surname suffix. For example, Sr. or Jr."
+
+      - name: full_name
+        description: "Full name of the person."
+        tests:
+          - not_null

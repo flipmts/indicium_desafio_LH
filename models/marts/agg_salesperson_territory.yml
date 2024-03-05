@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: agg_salesperson_territory
+    description: "Agregate table between salesperson and territory"
+    columns:
+      - name: sk_salesperson_territory
+        description: "key SK generated for the table's unique identifier, generated from the creditcardid and cardtype columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: territoryid
+        description: "Foreign key for SalesTerritory records."
+        tests:
+          - not_null
+
+      - name: territory_name
+        description: "Sales territory description"
+        tests:
+          - not_null
+
+      - name: salespersonid
+        description: "Foreign key for SalesPerson records."
+        tests:
+          - not_null
+
+      - name: full_name
+        description: "Full name of the person."
+        tests:
+          - not_null
+
+      - name: total_products_amount
+        description: "total products sold."
+
+      - name: total_salesperson_due
+        description: "Total due sales for the salesperson."
+
+      - name: average_order_value
+        description: "Average Order Value."

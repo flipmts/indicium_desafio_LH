@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_credit_card
+    description: "Customer credit card information."
+    columns:
+      - name: sk_credit_card
+        description: "key SK generated for the table's unique identifier, generated from the creditcardid and cardtype columns."
+        tests:
+          - unique
+          - not_null
+      
+      - name: creditcardid
+        description: "Primary key for CreditCard records."
+        tests:
+          - unique
+          - not_null
+
+      - name: cardtype
+        description: "Credit card name."
+        tests:
+          - not_null
