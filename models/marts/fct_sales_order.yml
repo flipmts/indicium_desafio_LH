@@ -83,3 +83,8 @@ models:
         description: Discount amount.
         tests:
           - not_null
+
+      - name: unit_subtotal
+        description: Subtotal per unit
+        tests:
+          - not_null

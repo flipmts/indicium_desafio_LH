@@ -17,6 +17,7 @@ with
             , order_qty
             , unit_price
             , unit_price_discount
+            , unit_subtotal
         from {{ref('int_sales_order')}}
     )
 
