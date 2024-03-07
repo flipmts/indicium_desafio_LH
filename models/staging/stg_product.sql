@@ -6,8 +6,8 @@ with stg_product as (
         , standardcost as standard_cost
         , listprice as list_price
         , productsubcategoryid
-        , sellstartdate as sell_start_date
-        , sellenddate as sell_end_date
+        , parse_timestamp('%Y-%m-%d %H:%M:%E*S', sellstartdate) as sell_start_date
+        , parse_timestamp('%Y-%m-%d %H:%M:%E*S', sellenddate) as sell_end_date
         , discontinueddate as discontinued_date
     from {{ source('raw_data', 'product') }}
 )
