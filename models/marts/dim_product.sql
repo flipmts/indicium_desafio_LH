@@ -25,7 +25,6 @@ with
             , product.list_price
             , product.sell_start_date
             , product.sell_end_date
-            , product.discontinued_date
             , product.productsubcategoryid
             , subcategory.product_subcategory
             , subcategory.productcategoryid

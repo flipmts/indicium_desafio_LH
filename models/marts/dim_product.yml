@@ -44,9 +44,6 @@ models:
 
       - name: sell_end_date
         description: "Date the product was no longer available for sale."
-      
-      - name: discontinued_date
-        description: "Date the product was discontinued."
 
       - name: productsubcategoryid
         description: "Foreign key to ProductSubCategory.ProductSubCategoryID."
