@@ -10,7 +10,7 @@ models:
           - unique
           - not_null
       
-      - name: territoryid
+      - name: fk_territory
         description: "Foreign key for SalesTerritory records."
         tests:
           - not_null
@@ -20,7 +20,7 @@ models:
         tests:
           - not_null
 
-      - name: salespersonid
+      - name: fk_salesperson
         description: "Foreign key for SalesPerson records."
         tests:
           - not_null
