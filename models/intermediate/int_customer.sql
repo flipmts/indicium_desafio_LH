@@ -67,7 +67,7 @@ with
         from customer
         left join person on customer.personid = person.businessentityid
         left join email_address on person.businessentityid = email_address.businessentityid
-        left join store on store.storeid = customer.storeid
+        left join store on store.businessentityid = customer.storeid
     )
 select *
 from cte_customer
