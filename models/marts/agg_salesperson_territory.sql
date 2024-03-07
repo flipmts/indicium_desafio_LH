@@ -21,7 +21,7 @@ with
             , fk_salesperson
             , fk_territory
             , order_qty
-            , total_due
+            , unit_price
         from {{ref('fct_sales_order')}}
     )
 
@@ -32,8 +32,8 @@ with
             , salesperson.salespersonid
             , salesperson.full_name
             , round(sum(sales_order.order_qty), 2) as total_products_amount
-            , round(sum(sales_order.total_due), 2) as total_salesperson_due
-            , round(sum(sales_order.total_due) / sum(sales_order.order_qty), 2) as average_order_value
+            , round(sum(sales_order.unit_price), 2) as total_salesperson_due
+            , round(sum(sales_order.unit_price) / sum(sales_order.order_qty), 2) as average_order_value
         from sales_order
         left join salesperson on salesperson.sk_salesperson = sales_order.fk_salesperson
         left join territory on territory.sk_territory = sales_order.fk_territory

@@ -50,7 +50,7 @@ with
             ) as full_name
             from salesperson
             left join employee on salesperson.businessentityid = employee.businessentityid
-            left join person on employee.businessentityid = person.businessentityid
+            left join person on person.businessentityid = employee.businessentityid
     )
 
 select *

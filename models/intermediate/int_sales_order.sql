@@ -42,7 +42,8 @@ with
          , productid
          , unit_price
          , unit_price_discount
-         , ((unit_price - unit_price_discount) * order_qty) as unit_subtotal
+         , ((unit_price - unit_price_discount) * order_qty) as unit_net_sales
+         , (unit_price * order_qty) as unit_subtotal
       from {{ref('stg_sales_order_detail')}}
    )
    
@@ -83,6 +84,7 @@ with
          , order_detail.order_qty
          , order_detail.unit_price
          , order_detail.unit_price_discount
+         , order_detail.unit_net_sales
          , order_detail.unit_subtotal
          , dim_product.sk_product as fk_product
          , dim_customer.sk_customer as fk_customer
