@@ -23,8 +23,6 @@ with
             , sales_quota
             , bonus
             , commission_pct
-            , sales_ytd
-            , sales_last_year
         from{{ref('stg_salesperson')}}
     )
 
